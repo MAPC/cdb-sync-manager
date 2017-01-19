@@ -1,3 +1,31 @@
-<%- @synchronizations.each do |record| %>
-  <%= link_to record.name, record %> <br />
-<%- end %>
+<div class="ui segment">
+  <h1>
+    Database Connections
+  </h1>
+  <table class="ui sortable celled table">
+    <thead>
+      <tr><th>Database</th>
+      <th>Table Name</th>
+      <th>Status</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th>Last Run</th>
+      <th>Will Run Again</th>
+      <th>Sync again?</th>
+    </tr></thead>
+    <tbody>
+  <%- @synchronizations.each do |record| %>
+    <tr>
+      <td><%= record.database %> </td>
+      <td><%= "#{record.schema}.#{record.table_name}" %> </td>
+      <td><%= record.state %> </td>
+      <td><%= Date.parse record.created_at %> </td>
+      <td><%= Date.parse record.updated_at %> </td>
+      <td><%= Date.parse record.ran_at %> </td>
+      <td><%= Date.parse record.run_at %> </td>
+      <td class="green inverted"><%= link_to 'Sync Now', sync_now_synchronization_path(record.id) %>  </td>
+    </tr>
+  <%- end %>
+   </tbody>
+  </table>
+</div>

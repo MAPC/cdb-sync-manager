@@ -130,6 +130,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    semantic-ui-sass (2.2.7.1)
+      sass (>= 3.2)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -170,6 +172,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  semantic-ui-sass
   spring
   sqlite3
   turbolinks
