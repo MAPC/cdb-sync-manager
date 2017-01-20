@@ -15,6 +15,7 @@ gem 'her'
 gem 'semantic-ui-sass'
 gem 'foreman'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'pg'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

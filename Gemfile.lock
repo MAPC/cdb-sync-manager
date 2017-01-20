@@ -101,6 +101,7 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.17.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -187,6 +188,7 @@ DEPENDENCIES
   her
   jbuilder (~> 2.0)
   jquery-rails
+  pg
   pry-rails
   rack-cors
   rails (= 4.2.0)

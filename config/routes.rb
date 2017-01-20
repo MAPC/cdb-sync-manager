@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :connector_configurations
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
   resources :synchronizations do
     patch :sync_now, on: :member
   end
+
+  resources :database_connections
 
   # Example resource route with options:
   #   resources :products do
