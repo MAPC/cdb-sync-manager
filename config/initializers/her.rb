@@ -1,6 +1,6 @@
 class QueryInjector < Faraday::Middleware
   def call(env)
-    token = '' # or any method to get your token
+    token = ENV['API_KEY'] # or any method to get your token
 
     # env[:url] is a URI object
     env[:url].query = "api_key=#{token}"

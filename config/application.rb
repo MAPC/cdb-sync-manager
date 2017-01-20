@@ -22,6 +22,23 @@ module CdbSyncManager
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    # ActiveModelSerializers.config.adapter = :json_api
+    KNOWN_HOSTS = ENV.fetch('KNOWN_HOSTS') {
+      'http://lvh.me:5000,http://localhost:4200'
+    }
+    DEBUG_CORS  = ENV.fetch('DEBUG_CORS', false)
+
+    config.middleware.insert_before 0, 'Rack::Cors',
+      debug:  DEBUG_CORS,
+      logger: (-> { Rails.logger }) do
+
+      allow do
+        origins  KNOWN_HOSTS.split(',')
+        resource '*', headers: :any, methods: %i( get post put patch delete )
+      end
+
+    end
+    
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

@@ -1,5 +1,7 @@
-class Synchronization
+class Synchronization < ActiveModelSerializers::Model
   include Her::Model
+
+  include_root_in_json = true
 
   def self.connectors
     all.select { |synchronization| synchronization.service_name == 'connector' }
