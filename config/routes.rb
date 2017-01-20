@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :synchronizations do
-    get :sync_now, on: :member
+    patch :sync_now, on: :member
   end
 
   # Example resource route with options:

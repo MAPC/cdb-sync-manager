@@ -19,6 +19,7 @@ class SynchronizationsController < ApplicationController
 
   def sync_now
     Synchronization.find(params[:id]).sync_now
-    redirect_to request.referrer
+    @synchronization = Synchronization.find(params[:id])
+    render jsonapi: @synchronization
   end
 end
