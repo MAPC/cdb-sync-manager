@@ -39,6 +39,11 @@ class SynchronizationsController < ApplicationController
     end
   end
 
+  def destroy
+    @synchronization = Synchronization.find(params[:id])
+    @synchronization.destroy
+  end
+
   def sync_now
     Synchronization.find(params[:id]).sync_now
     @synchronization = Synchronization.find(params[:id])
