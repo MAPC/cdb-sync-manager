@@ -7,6 +7,8 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
 
+    protect_from_forgery with: :null_session
+
     http_basic_authenticate_with name: ENV.fetch('ADMIN_NAME', 'admin'),
       password: ENV.fetch('ADMIN_PASSWORD', 'password')
 
