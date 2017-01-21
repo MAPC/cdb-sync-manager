@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :connector_configurations
+
+    root to: "connector_configurations#index"
+  end
+
   resources :connector_configurations
 
   # The priority is based upon order of creation: first created -> highest priority.
