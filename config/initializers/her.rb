@@ -1,3 +1,5 @@
+require 'faraday_middleware'
+
 class QueryInjector < Faraday::Middleware
   def call(env)
     token = ENV['API_KEY'] # or any method to get your token
@@ -24,10 +26,11 @@ end
 
 # config/initializers/her.rb
 Her::API.setup url: "https://mapc-admin.carto.com/api/v1" do |c|
+  c.request :json
   # Request
   c.use QueryInjector
-  c.use Faraday::Request::UrlEncoded
-
+  # c.use Faraday::Request::JSON
+  # c.request :json
   # Response
   c.use SynchronizationsParser
 

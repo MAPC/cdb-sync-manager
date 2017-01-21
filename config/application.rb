@@ -31,14 +31,12 @@ module CdbSyncManager
     config.middleware.insert_before 0, 'Rack::Cors',
       debug:  DEBUG_CORS,
       logger: (-> { Rails.logger }) do
-
-      allow do
-        origins  KNOWN_HOSTS.split(',')
-        resource '*', headers: :any, methods: %i( get post put patch delete )
+        allow do
+          origins  KNOWN_HOSTS.split(',')
+          resource '*', headers: :any, methods: %i( get post put patch delete )
+        end
       end
-
-    end
     
-    config.active_record.raise_in_transactional_callbacks = true
+    config.active_record.raise_in_transactional_callbacks = false
   end
 end

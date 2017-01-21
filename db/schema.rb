@@ -29,17 +29,4 @@ ActiveRecord::Schema.define(version: 20170120170511) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "database_connections", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "server"
-    t.string   "database"
-    t.string   "username"
-    t.string   "password"
-    t.string   "table"
-    t.string   "schema"
-    t.string   "interval"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
