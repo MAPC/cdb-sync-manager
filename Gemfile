@@ -20,7 +20,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'pg'
 gem "administrate"
 gem 'bourbon'
-gem "ember-cli-rails", github: "thoughtbot/ember-cli-rails"
+gem "ember-cli-rails", git: "https://github.com/thoughtbot/ember-cli-rails.git"
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/thoughtbot/ember-cli-rails.git
+  remote: https://github.com/thoughtbot/ember-cli-rails.git
   revision: 045592583a1448a2c77f2f492ba79a14931fe93a
   specs:
     ember-cli-rails (0.8.3)
