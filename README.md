@@ -1,6 +1,3 @@
-== README
-
-
 # Cdb-sync-manager-client
 
 CDB Sync Manager provides a GUI for creating import synchronizations between CartoDB and a given Postgres database. The API backend for this tool can be found here: https://github.com/MAPC/cdb-sync-manager
