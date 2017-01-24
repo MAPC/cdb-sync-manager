@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     patch :sync_now, on: :member
   end
 
+  resources :imports
+
   resources :database_connections
 
   mount_ember_app :frontend, to: "/"

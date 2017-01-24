@@ -29,10 +29,12 @@ class SynchronizationsController < ApplicationController
                           "username": connector.username, 
                           "password": connector.password }, 
           "table": json["table"], 
-          "schema": json["schema"] }, 
+          "schema": json["schema"],
+          "sql_query": json["sql_query"] }, 
         "interval": 15778463 }
+
     sync = Synchronization.post("synchronizations", config)
-    puts sync
+    
     respond_to do |format|
       format.html
       format.jsonapi { render jsonapi: sync }
