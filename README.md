@@ -10,6 +10,10 @@ CDB Sync Manager provides a GUI for creating import synchronizations between Car
 
 ![Manually Sync or Delete existing syncs](https://github.com/MAPC/cdb-sync-manager-client/blob/master/ka3b0vt1He.gif?raw=true)
 
+# MAPC Staff
+## Where does this live?
+Ask Susan, consult Slack, or ask Digital Services :) link cannnot be shared publicly. 
+
 ## Steps and troubleshooting for adding new datasets
 To add a new dataset, click the "Add New Connection" button in the top right. You will see a form in which you can choose the database and table. In the schema field, you will have to manually type the correct schema (often it is simply "tabular"). 
 
