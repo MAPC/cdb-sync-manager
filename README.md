@@ -14,7 +14,7 @@ CDB Sync Manager provides a GUI for creating import synchronizations between Car
 ## Where does this live?
 Ask Susan, consult Slack, or ask Digital Services :) link cannnot be shared publicly. 
 
-## Steps and troubleshooting for adding new datasets
+## Add Datasets
 To add a new dataset, click the "Add New Connection" button in the top right. You will see a form in which you can choose the database and table. In the schema field, you will have to manually type the correct schema (often it is simply "tabular"). 
 
 ### Caveats
@@ -34,7 +34,7 @@ Sadly, Carto defaults datasets to "private" on enterprise accounts. We're commun
 
 If Carto sees a dataset with the same name, it will simply append `_2` to the end of the dataset once it's synced. This will cause issues for the data catalogue! Double-check mapc-admin.carto.com for this.
 
-## Updating datasets
+## Update Datasets
 Currently, datasets are set to re-sync every 6 months by default. This helps keep data fresh in case anything is missed. To re-sync immediately, maintainers can use this app. Simply find the dataset by its table name, and click "resync". 
 
 ## Metadata
