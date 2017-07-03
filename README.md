@@ -1,38 +1,44 @@
-# Cdb-sync-manager-client
+# Carto Postgres Sync Manager
 
-CDB Sync Manager provides a GUI for creating import synchronizations between CartoDB and a given Postgres database. The API backend for this tool can be found here: https://github.com/MAPC/cdb-sync-manager
+CDB Sync Manager provides a GUI for creating import synchronizations between CartoDB and a Postgres database.
 
-## Sync from a list of database tables, pulled dynamically from a specified database
+## Features
+### Sync from a list of database tables, pulled dynamically from a specified database
 
 ![Sync from a list of database tables](https://github.com/MAPC/cdb-sync-manager-client/blob/master/M73d4cf9QA.gif?raw=true "Logo Title Text 1")
 
-## Manually sync or delete existing syncs
+### Manually sync or delete existing syncs
 
 ![Manually Sync or Delete existing syncs](https://github.com/MAPC/cdb-sync-manager-client/blob/master/ka3b0vt1He.gif?raw=true)
 
-# MAPC Staff
+
+# MAPC Staff Guide
 ## Where does this live?
-Ask Susan, consult Slack, or ask Digital Services :) link cannnot be shared publicly. 
+Ask Susan, consult Slack, or ask Digital Services :) link cannot be shared publicly. 
 
 ## Add Datasets
-To add a new dataset, click the "Add New Connection" button in the top right. You will see a form in which you can choose the database and table. In the schema field, you will have to manually type the correct schema (often it is simply "tabular"). 
+To add a new dataset, click the "Add New Connection" button in the top right. You will see a form in which you can choose the database and table you want to sync. In the schema field, you will have to manually type the correct schema (often it is simply "tabular"). 
 
 ### Caveats
 1. 'The sync is stuck on "Created"'
 
-This probably means it failed to sync. Click "delete now", refresh, and try again, but make sure the table in question is setup with correct permissions. If you are in the process of adding several new connections, you may need to pause for a few minutes as the database server gets overloaded sometimes.
+This probably means it failed to sync. Click "delete now", refresh, and try again, but make sure the table in question is setup with correct permissions. The "viewer" user needs to be able to read the table. If you are in the process of adding several new connections, you may need to pause for a few minutes as the database server gets overloaded sometimes.
 
 2. 'The new datasets aren't appearing in the external [Data Catalog](databrowser.mapc.org).'
 
 This requires two additional steps:
+
 a. Re-sync the `tabular._data_browser` table
+
 This table is is the crosswalk that tells the data catalogue where everything is and how to connect to it. 
+
 b. Login to the mapc-admin.carto.com account and set all new datasets to "public"
-Sadly, Carto defaults datasets to "private" on enterprise accounts. We're communicating with their team about this. 
+
+Unfortunately, Carto defaults datasets to "private" on enterprise accounts. We're communicating with their team about this. 
 
 3. 'Check for duplicates'
 
-If Carto sees a dataset with the same name, it will simply append `_2` to the end of the dataset once it's synced. This will cause issues for the data catalogue! Double-check mapc-admin.carto.com for this.
+If Carto sees a dataset with the same name, it will simply append `_2` to the name of the dataset once it's synced. This will cause issues for the data catalogue! Double-check mapc-admin.carto.com for this.
 
 ## Update Datasets
 Currently, datasets are set to re-sync every 6 months by default. This helps keep data fresh in case anything is missed. To re-sync immediately, maintainers can use this app. Simply find the dataset by its table name, and click "resync". 
