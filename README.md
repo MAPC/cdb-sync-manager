@@ -18,17 +18,20 @@ Ask Susan, consult Slack, or ask Digital Services :) link cannnot be shared publ
 To add a new dataset, click the "Add New Connection" button in the top right. You will see a form in which you can choose the database and table. In the schema field, you will have to manually type the correct schema (often it is simply "tabular"). 
 
 ### Caveats
-1. The sync is stuck on "Created"
+1. 'The sync is stuck on "Created"'
+
 This probably means it failed to sync. Click "delete now", refresh, and try again, but make sure the table in question is setup with correct permissions. If you are in the process of adding several new connections, you may need to pause for a few minutes as the database server gets overloaded sometimes.
 
-2. The new datasets aren't appearing in the external [Data Catalog](databrowser.mapc.org). 
+2. 'The new datasets aren't appearing in the external [Data Catalog](databrowser.mapc.org).'
+
 This requires two additional steps:
 a. Re-sync the `tabular._data_browser` table
 This table is is the crosswalk that tells the data catalogue where everything is and how to connect to it. 
 b. Login to the mapc-admin.carto.com account and set all new datasets to "public"
 Sadly, Carto defaults datasets to "private" on enterprise accounts. We're communicating with their team about this. 
 
-3. Check for duplicates
+3. 'Check for duplicates'
+
 If Carto sees a dataset with the same name, it will simply append `_2` to the end of the dataset once it's synced. This will cause issues for the data catalogue! Double-check mapc-admin.carto.com for this.
 
 ## Updating datasets
