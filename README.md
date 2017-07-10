@@ -28,7 +28,7 @@ Sadly, Carto defaults datasets to "private" on enterprise accounts. We're commun
 If Carto sees a dataset with the same name, it will simply append `_2` to the end of the dataset once it's synced. This will cause issues for the data catalogue! Double-check mapc-admin.carto.com for this.
 
 ## Updating datasets
-Currently, datasets are set to re-sync every 6 months by default. This helps keep data fresh in case anything is missed. To re-sync immediately, maintainers can use this app. Simply find the dataset by its table name, and click "resync". 
+Currently, datasets are set to re-sync every 6 months by default. This helps keep data fresh in case anything is missed. To re-sync immediately, maintainers can use this app. Simply find the dataset by its table name, and click "Sync Now". 
 
 ## Metadata
 Right now, metadata needs to be synced manually by specifying a "tablename" argument in the synchronization, and prefixing the table name with `meta_`. The Data Catalogue is set to find metadata tables by prefixing the table name with `meta_`. This is because metadata and data are being sync'd to the same Carto account, which exist under the same table schema so they cannot share the same table name. 
